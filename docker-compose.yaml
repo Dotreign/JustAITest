@@ -1,0 +1,16 @@
+services:
+  just-ai-service:
+    build: .
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      VK_API_VERSION: 5.199
+      VK_API_ACCESS_TOKEN: vk1.a.fu1oA5serBcGYhEdsBzlU_j0CM-fQ2R3f6oSQy35IzmmYZ9TAOd2DEo5jBjGqOF6ENzDvzO09VwXs0Ii47q7KmqEfYp522VRtRWld6PQEBHw_gzsrNrJ5oGHFkSh5S-uEdpb-x8HAh0Q4An-5zrmq4cBJyryKUUTSEW0QFKso91lESvTuxQdke4tkYmoHgyCVQo1xI1mZMFVn1Oy8vS5OA
+    container_name: investment_app_container
+    ports:
+      - 8083:8083
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - 6379:6379
